@@ -1,8 +1,9 @@
 import Form from "./Form";
+import Tasks from "./Tasks";
 
 const tasks = [
-  {id: 1, content: "learn React", done: false},
-  {id: 2, content: "eat dinner", done: true},
+  { id: 1, content: "learn React", done: false },
+  { id: 2, content: "eat dinner", done: true },
 ];
 const hideDoneTasks = false;
 
@@ -24,8 +25,7 @@ function App() {
           <h2 className="section__title">Tasks list</h2>
           <div className="buttons__container"></div>
         </header>
-        <ul className="list__tasksList">
-        </ul>
+        <Tasks tasks={tasks} key={tasks.id} hideDoneTasks={hideDoneTasks} />
       </section>
     </div>
   );
