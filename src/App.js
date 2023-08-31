@@ -1,6 +1,7 @@
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
+import Section from "./Section";
 
 const tasks = [
   { id: 1, content: "learn React", done: false },
@@ -15,19 +16,16 @@ function App() {
         <h1 className="header__title">Tasks list</h1>
       </header>
 
-      <section className="section">
-        <header className="section__header">
-          <h2 className="section__title">Add new task</h2>
-        </header>
-        <Form />
-      </section>
-      <section className="section">
-        <header className="section__header">
-          <h2 className="section__title">Tasks list</h2>
-          <Buttons tasks={tasks} key={tasks.id} hideDoneTasks={hideDoneTasks} />
-        </header>
-        <Tasks tasks={tasks} key={tasks.id} hideDoneTasks={hideDoneTasks} />
-      </section>
+      <Section
+      title="Add new task"
+      body={<Form />}
+      />
+
+      <Section
+      title="Tasks list"
+      extraHeaderContent={<Buttons tasks={tasks} key={tasks.id} hideDoneTasks={hideDoneTasks} />}
+      body={<Tasks tasks={tasks} key={tasks.id} hideDoneTasks={hideDoneTasks} />}
+      />
     </div>
   );
 }
