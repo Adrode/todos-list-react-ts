@@ -3,6 +3,7 @@ import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
+import Container from "./Container";
 
 const tasks = [
   { id: 1, content: "learn React", done: false },
@@ -12,7 +13,7 @@ const hideDoneTasks = false;
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <Header title="Tasks list" />
 
       <Section
@@ -25,7 +26,7 @@ function App() {
         extraHeaderContent={<Buttons tasks={tasks} key={tasks.id} hideDoneTasks={hideDoneTasks} />}
         body={<Tasks tasks={tasks} key={tasks.id} hideDoneTasks={hideDoneTasks} />}
       />
-    </div>
+    </Container>
   );
 }
 
