@@ -18,6 +18,6 @@ const Tasks = (props) => (
             </li>
         ))}
     </ul>
-)
+);
 
 export default Tasks;
