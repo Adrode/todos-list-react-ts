@@ -1,6 +1,6 @@
 # To-do list - React
 
-## *[To-do list app](https://adrode.github.io/task-list/)*
+## *[To-do list app](https://adrode.github.io/todos-list-react/)*
 
 ![pageScreenshot](public/taskListPageScreenshotUpdate1.png)
 
