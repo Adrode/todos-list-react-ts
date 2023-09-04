@@ -2,7 +2,7 @@
 
 ## *[To-do list app](https://adrode.github.io/todos-list-react/)*
 
-![pageScreenshot](public/taskListPageScreenshotUpdate1.png)
+![pageScreenshot](images/taskListPageScreenshotUpdate1.png)
 
 This project is still developing. At the moment it contains only the page layout, no functionality.
 
