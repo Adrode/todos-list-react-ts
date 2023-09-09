@@ -4,6 +4,10 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
+import * as hello from "./utils/hello";
+
+hello.hello();
+console.log(hello.name);
 
 const tasks = [
   { id: 1, content: "learn React", done: false },
