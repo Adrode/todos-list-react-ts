@@ -7,8 +7,11 @@ const Buttons = (props) => {
 
     return (
         <div className="buttons__container">
-            <button className="buttons__featureButton">
-                {props.hideDoneTasks ? "Show" : "Hide"} done tasks
+            <button
+                className="buttons__featureButton"
+                onClick={props.toggleHideDone}
+            >
+                {props.hideDone ? "Show" : "Hide"} done tasks
             </button>
             <button
                 className="buttons__featureButton"
