@@ -7,7 +7,10 @@ const Tasks = (props) => (
                 key={task.id}
                 className={`list__listItem ${task.done && props.hideDone ? "list__listItem--hidden" : ""}`}
             >
-                <button className="list__listButton">
+                <button
+                    className="list__listButton"
+                    onClick={() => props.toggleTaskDone(task.id)}
+                >
                     {task.done ? "✔" : ""}
                 </button>
                 <span className={`list__taskData ${task.done ? " list__taskData--done" : ""}`}>
