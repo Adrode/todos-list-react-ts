@@ -9,13 +9,17 @@ import Container from "./Container";
 function App() {
   const [hideDone, setHideDone] = useState(false);
 
-  const tasks = [
+  const [tasks, setTasks] = useState([
     { id: 1, content: "learn React", done: false },
     { id: 2, content: "eat breakfast", done: true },
-  ];
+  ]);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
+  };
+
+  const removeTask = (id) => {
+    setTasks(tasks => tasks.filter(task => task.id !== id));
   };
 
   return (
@@ -30,18 +34,19 @@ function App() {
       <Section
         title="Tasks list"
         extraHeaderContent={
-        <Buttons
-          tasks={tasks}
-          key={tasks.id}
-          hideDone={hideDone}
-          toggleHideDone={toggleHideDone}
-        />}
+          <Buttons
+            tasks={tasks}
+            key={tasks.id}
+            hideDone={hideDone}
+            toggleHideDone={toggleHideDone}
+          />}
         body={
-        <Tasks
-          tasks={tasks}
-          key={tasks.id}
-          hideDone={hideDone}
-        />}
+          <Tasks
+            tasks={tasks}
+            key={tasks.id}
+            hideDone={hideDone}
+            removeTask={removeTask}
+          />}
       />
     </Container>
   );

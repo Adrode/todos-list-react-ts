@@ -13,7 +13,10 @@ const Tasks = (props) => (
                 <span className={`list__taskData ${task.done ? " list__taskData--done" : ""}`}>
                     {task.content}
                 </span>
-                <button className="list__listButton list__listButton--changedBackground">
+                <button
+                    className="list__listButton list__listButton--changedBackground"
+                    onClick={() => props.removeTask(task.id)}
+                >
                     🗑
                 </button>
             </li>
