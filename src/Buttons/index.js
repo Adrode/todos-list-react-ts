@@ -16,6 +16,7 @@ const Buttons = (props) => {
             <button
                 className="buttons__featureButton"
                 disabled={props.tasks.every(({ done }) => done) ? "disabled" : ""}
+                onClick={props.toggleAllDone}
             >
                 Mark all tasks as done
             </button>
