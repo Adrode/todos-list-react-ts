@@ -28,7 +28,7 @@ function App() {
         return {...task, done: !task.done,};
       }
 
-      return {...task};
+      return task;
     }));
   };
 
