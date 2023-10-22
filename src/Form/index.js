@@ -6,9 +6,11 @@ const Form = (props) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        if (newTaskContent === "") {
+            return null;
+        }
         props.addNewTask(newTaskContent.trim());
         setNewTaskContent("");
-        
     };
 
     return (
