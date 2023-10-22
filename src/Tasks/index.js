@@ -14,7 +14,7 @@ const Tasks = (props) => (
                     {task.done ? "✔" : ""}
                 </button>
                 <span className={`list__taskData ${task.done ? " list__taskData--done" : ""}`}>
-                    {task.content}
+                    {task.id} - {task.content}
                 </span>
                 <button
                     className="list__listButton list__listButton--changedBackground"
