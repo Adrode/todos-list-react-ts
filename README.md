@@ -4,13 +4,10 @@
 
 ![pageScreenshot](images/taskListPageScreenshotUpdate1.png)
 
-This project is still developing. At the moment it contains only the page layout, no functionality.
+### Basic activity:
 
-### Features that will be added in the future:
-
-You can add tasks to your to-do list. You can also mark tasks as done and remove any tasks from the list.
-
-Tasks are added to the list using JavaScript. The code retrieves the text content from input after clicking the "Add task" button, passes it to the render() function, which displays the list items in the form of: buttons for marking tasks as completed, content of the task added to the list, button for removing the task.
+You can add tasks to your to-do list. You can also mark tasks as done and remove any tasks from the list.\
+Also there are 2 another buttons to hide tasks that are marked as done and to mark all the tasks as done.
 
 ### Technologies used:
 - HTML
@@ -28,6 +25,8 @@ Tasks are added to the list using JavaScript. The code retrieves the text conten
     - Immutability
     - React framework
     - JSX syntax
+    - useState
+    - Controlled components
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
