@@ -3,6 +3,7 @@ import "./style.css";
 const Tasks = (props) => (
     <ul className="list__tasksList">
         {props.tasks.map(task => (
+
             <li
                 key={task.id}
                 className={`list__listItem ${task.done && props.hideDone ? "list__listItem--hidden" : ""}`}
@@ -22,8 +23,8 @@ const Tasks = (props) => (
                 >
                     🗑
                 </button>
-            </li>
-        ))}
+            </li>)
+        )}
     </ul>
 );
 
