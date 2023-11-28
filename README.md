@@ -7,7 +7,8 @@
 ### Basic activity:
 
 You can add tasks to your to-do list. You can also mark tasks as done and remove any tasks from the list.\
-Also there are 2 another buttons to hide tasks that are marked as done and to mark all the tasks as done.
+Also there are 2 another buttons to hide tasks that are marked as done and to mark all the tasks as done.\
+All tasks are saved in Local Storage.
 
 ### Technologies used:
 - HTML
@@ -18,7 +19,7 @@ Also there are 2 another buttons to hide tasks that are marked as done and to ma
     - Media Queries
     - Transition, Transform
     - Pseudo-classes
-- JS
+- JS/React
     - Arrow functions
     - Arrays
     - Objects
@@ -27,6 +28,8 @@ Also there are 2 another buttons to hide tasks that are marked as done and to ma
     - JSX syntax
     - useState
     - Controlled components
+    - useEffect
+    - Local Storage
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
