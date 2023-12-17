@@ -1,4 +1,6 @@
-.form {
+import styled from "styled-components";
+
+export const StyledForm = styled.form`
     background-color: #fff;
     padding: 20px;
     gap: 20px;
@@ -6,24 +8,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
 
-@media (max-width: 767px) {
-    .form {
+    @media (max-width: 767px) {
         flex-wrap: wrap;
         justify-content: center;
         align-content: center;
     }
-}
+`;
 
-.form__textInput {
+export const Input = styled.input`
     padding: 8px;
     border: 1px solid #aaa;
     flex-grow: 1;
     overflow: auto;
-}
+`;
 
-.form__submitButton {
+export const Button = styled.button`
     padding: 8px;
     border: 1px solid teal;
     background-color: teal;
@@ -33,21 +33,18 @@
     flex-basis: 100px;
     align-items: center;
     justify-content: center;
-
     transition: 0.3s;
-}
 
-.form__submitButton:hover {
-    background-color: hsl(180, 100%, 30%);
-    transform: scale(1.05);
-}
-
-.form__submitButton:active {
-    border: 1px solid #eee;
-}
-
-@media (max-width: 767px) {
-    .form__submitButton {
+    @media (max-width: 767px) {
         flex-basis: 100%;
     }
-}
+
+    &:hover {
+        background-color: hsl(180, 100%, 30%);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        border: 1px solid #eee;
+    }
+`;
