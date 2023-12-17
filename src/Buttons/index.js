@@ -1,26 +1,24 @@
-import "./style.css";
+import { Container, Button } from "./styled";
 
-const Buttons = (props) => {
-    if (props.tasks.length === 0) {
+const Buttons = ({ tasks, toggleHideDone, hideDone, toggleAllDone }) => {
+    if (tasks.length === 0) {
         return null;
     }
 
     return (
-        <div className="buttons__container">
-            <button
-                className="buttons__featureButton"
-                onClick={props.toggleHideDone}
+        <Container>
+            <Button
+                onClick={toggleHideDone}
             >
-                {props.hideDone ? "Show" : "Hide"} done tasks
-            </button>
-            <button
-                className="buttons__featureButton"
-                disabled={props.tasks.every(({ done }) => done) ? "disabled" : ""}
-                onClick={props.toggleAllDone}
+                {hideDone ? "Show" : "Hide"} done tasks
+            </Button>
+            <Button
+                disabled={tasks.every(({ done }) => done)}
+                onClick={toggleAllDone}
             >
                 Mark all tasks as done
-            </button>
-        </div>
+            </Button>
+        </Container>
     );
 };
 

@@ -25,7 +25,7 @@ export const Button = styled.button`
     color: white;
     transition: background 0.3s;
 
-    ${({ toggleDone }) => toggleDone && css`
+    ${({ $toggleDone }) => $toggleDone && css`
         background-color: green;
         border: 1px solid green;
     
@@ -34,7 +34,7 @@ export const Button = styled.button`
         }
     `}
 
-    ${({ remove }) => remove && css`
+    ${({ $remove }) => $remove && css`
         background-color: red;
         border: 1px solid red;
 

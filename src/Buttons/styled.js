@@ -1,39 +1,38 @@
-.buttons__container {
+import styled from "styled-components";
+
+export const Container = styled.div`
     padding: 20px;
     margin: 0;
 
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-}
 
-@media (max-width: 767px) {
-    .buttons__container {
+    @media (max-width: 767px) {
         padding: 0 20px 20px 20px;
         flex-basis: 100%;
     }
-}
+`;
 
-.buttons__featureButton {
+export const Button = styled.button`
     margin-left: 20px;
     padding: 0;
     border: none;
     background-color: transparent;
     color: teal;
     transition: color 0.3s;
-}
 
-@media (max-width: 767px) {
-    .buttons__featureButton {
+
+    @media (max-width: 767px) {
         flex-basis: 100%;
         margin: 10px;
     }
-}
+    
+    &:hover {
+        color: hsl(180, 100%, 35%);
+    }
 
-.buttons__featureButton:hover {
-    color: hsl(180, 100%, 35%);
-}
-
-.buttons__featureButton:disabled {
-    color: #AAA;
-}
+    &:disabled {
+        color: #AAA;
+    }
+`;
