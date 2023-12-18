@@ -49,7 +49,7 @@ export const Content = styled.span`
     align-items: center;
     padding: 0 10px;
 
-    ${({ done }) => done && css`
+    ${({ $done }) => $done && css`
         text-decoration: line-through;
     `}
 `;

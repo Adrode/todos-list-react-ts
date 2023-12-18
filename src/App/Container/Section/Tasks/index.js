@@ -15,7 +15,7 @@ const Tasks = ({ tasks, hideDone, toggleTaskDone, removeTask }) => (
                     {task.done ? "✔" : ""}
                 </Button>
                 <Content
-                    done={task.done}
+                    $done={task.done}
                 >
                     {task.id} - {task.content}
                 </Content>
