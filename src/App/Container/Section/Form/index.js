@@ -13,6 +13,7 @@ const Form = ({ addNewTask }) => {
         }
         addNewTask(trimmedTaskContent);
         setNewTaskContent("");
+        inputRef.current.focus()
     };
 
     return (
@@ -23,9 +24,7 @@ const Form = ({ addNewTask }) => {
                 value={newTaskContent}
                 onChange={({ target }) => setNewTaskContent(target.value)}
             />
-            <Button
-                onClick={() => inputRef.current.focus()}
-            >
+            <Button>
                 Add task
             </Button>
         </StyledForm>
