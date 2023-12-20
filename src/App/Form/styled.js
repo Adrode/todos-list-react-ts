@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.color.white};
     padding: 20px;
     gap: 20px;
 
@@ -9,7 +9,7 @@ export const StyledForm = styled.form`
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         flex-wrap: wrap;
         justify-content: center;
         align-content: center;
@@ -18,16 +18,16 @@ export const StyledForm = styled.form`
 
 export const Input = styled.input`
     padding: 8px;
-    border: 1px solid #aaa;
+    border: 1px solid ${({ theme }) => theme.color.silver};
     flex-grow: 1;
     overflow: auto;
 `;
 
 export const Button = styled.button`
     padding: 8px;
-    border: 1px solid teal;
-    background-color: teal;
-    color: white;
+    border: 1px solid ${({ theme }) => theme.color.teal};
+    background-color: ${({ theme }) => theme.color.teal};
+    color: ${({ theme }) => theme.color.white};
 
     display: flex;
     flex-basis: 100px;
@@ -35,16 +35,12 @@ export const Button = styled.button`
     justify-content: center;
     transition: 0.3s;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         flex-basis: 100%;
     }
 
     &:hover {
-        background-color: hsl(180, 100%, 30%);
+        filter: brightness(110%);
         transform: scale(1.05);
-    }
-
-    &:active {
-        border: 1px solid #eee;
     }
 `;

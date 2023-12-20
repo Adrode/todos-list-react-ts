@@ -8,7 +8,7 @@ export const StyledButtons = styled.div`
     align-items: center;
     flex-wrap: wrap;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         padding: 0 20px 20px 20px;
         flex-basis: 100%;
     }
@@ -19,20 +19,20 @@ export const Button = styled.button`
     padding: 0;
     border: none;
     background-color: transparent;
-    color: teal;
+    color: ${({ theme }) => theme.color.teal};
     transition: color 0.3s;
 
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         flex-basis: 100%;
         margin: 10px;
     }
     
     &:hover {
-        color: hsl(180, 100%, 35%);
+        filter: brightness(110%);
     }
 
     &:disabled {
-        color: #AAA;
+        color: ${({ theme }) => theme.color.silver};
     }
 `;

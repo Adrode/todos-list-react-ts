@@ -8,7 +8,7 @@ export const StyledSection = styled.section`
 `;
 
 export const Header = styled.header`
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.color.white};
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -18,7 +18,7 @@ export const Title = styled.h2`
     padding: 20px;
     margin: 0;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         flex-basis: 100%;
     }
 `;

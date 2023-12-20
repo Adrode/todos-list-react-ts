@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const StyledTasks = styled.ul`
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.color.white};
     padding: 20px;
     margin: 0;
     overflow: auto;
@@ -11,7 +11,7 @@ export const Element = styled.li`
     display: grid;
     grid-template-columns: auto 1fr auto;
     padding: 10px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid ${({ theme }) => theme.color.gallery};
     align-items: center;
 
     ${({ hidden }) => hidden && css`
@@ -22,24 +22,24 @@ export const Element = styled.li`
 export const Button = styled.button`
     min-width: 30px;
     min-height: 30px;
-    color: white;
-    transition: background 0.3s;
+    color: ${({ theme }) => theme.color.white};
+    transition: filter 0.3s;
 
     ${({ $toggleDone }) => $toggleDone && css`
-        background-color: green;
-        border: 1px solid green;
+        background-color: ${({ theme }) => theme.color.green};
+        border: 1px solid ${({ theme }) => theme.color.green};
     
         &:hover {
-            background-color: hsl(120, 100%, 30%);
+            filter: brightness(120%);
         }
     `}
 
     ${({ $remove }) => $remove && css`
-        background-color: red;
-        border: 1px solid red;
+        background-color: ${({ theme }) => theme.color.red};
+        border: 1px solid ${({ theme }) => theme.color.red};
 
         &:hover {
-            background-color: hsl(0, 100%, 65%);
+            filter: brightness(120%);
         }
     `}
 `;
