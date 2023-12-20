@@ -1,10 +1,9 @@
 import { useTasks } from "./useTasks";
-import Form from "./Container/Section/Form";
-import Tasks from "./Container/Section/Tasks";
-import Buttons from "./Container/Section/Buttons";
-import Section from "./Container/Section";
-import Header from "./Container/Header";
-import Container from "./Container";
+import Form from "./Form";
+import Tasks from "./Tasks";
+import Buttons from "./Buttons";
+import Section from "./Section";
+import Header from "./Header";
 
 function App() {
   const {
@@ -18,7 +17,7 @@ function App() {
   } = useTasks();
 
   return (
-    <Container>
+    <>
       <Header title="Tasks list" />
 
       <Section
@@ -45,7 +44,7 @@ function App() {
             toggleTaskDone={toggleTaskDone}
           />}
       />
-    </Container>
+    </>
   );
 }
 
