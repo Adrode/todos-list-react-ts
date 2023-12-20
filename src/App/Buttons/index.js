@@ -1,4 +1,4 @@
-import { Container, Button } from "./styled";
+import { StyledButtons, Button } from "./styled";
 
 const Buttons = ({ tasks, toggleHideDone, hideDone, toggleAllDone }) => {
     if (tasks.length === 0) {
@@ -6,7 +6,7 @@ const Buttons = ({ tasks, toggleHideDone, hideDone, toggleAllDone }) => {
     }
 
     return (
-        <Container>
+        <StyledButtons>
             <Button
                 onClick={toggleHideDone}
             >
@@ -18,7 +18,7 @@ const Buttons = ({ tasks, toggleHideDone, hideDone, toggleAllDone }) => {
             >
                 Mark all tasks as done
             </Button>
-        </Container>
+        </StyledButtons>
     );
 };
 

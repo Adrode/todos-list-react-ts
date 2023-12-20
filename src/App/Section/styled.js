@@ -7,14 +7,14 @@ export const StyledSection = styled.section`
     margin-bottom: 10px;
 `;
 
-export const StyledHeader = styled.header`
+export const Header = styled.header`
     background-color: #fff;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 `;
 
-export const StyledTitle = styled.h2`
+export const Title = styled.h2`
     padding: 20px;
     margin: 0;
 

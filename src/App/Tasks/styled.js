@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const List = styled.ul`
+export const StyledTasks = styled.ul`
     background-color: #fff;
     padding: 20px;
     margin: 0;
