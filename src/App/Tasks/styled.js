@@ -23,7 +23,7 @@ export const Button = styled.button`
     min-width: 30px;
     min-height: 30px;
     color: ${({ theme }) => theme.color.white};
-    transition: filter 0.3s;
+    transition: 0.3s;
 
     ${({ $toggleDone }) => $toggleDone && css`
         background-color: ${({ theme }) => theme.color.green};
