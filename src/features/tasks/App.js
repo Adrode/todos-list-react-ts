@@ -2,8 +2,8 @@ import { useTasks } from "./useTasks";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
-import Section from "./Section";
-import Header from "./Header";
+import Section from "../../common/Section";
+import Header from "../../common/Header";
 
 function App() {
   const {
