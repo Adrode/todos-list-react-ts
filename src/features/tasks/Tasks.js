@@ -1,11 +1,11 @@
 import { useTasks } from "./useTasks";
 import Form from "./Form";
-import Tasks from "./Tasks";
+import TasksList from "./TasksList";
 import Buttons from "./Buttons";
 import Section from "../../common/Section";
 import Header from "../../common/Header";
 
-function App() {
+function Tasks() {
   const {
     tasks,
     hideDone,
@@ -36,7 +36,7 @@ function App() {
             toggleAllDone={toggleAllDone}
           />}
         body={
-          <Tasks
+          <TasksList
             tasks={tasks}
             key={tasks.id}
             hideDone={hideDone}
@@ -48,4 +48,4 @@ function App() {
   );
 }
 
-export default App;
+export default Tasks;
