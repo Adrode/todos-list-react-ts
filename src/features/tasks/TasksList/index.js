@@ -1,33 +1,40 @@
+import { useSelector, useDispatch } from "react-redux";
 import { StyledTasks, Element, Button, Content } from "./styled";
+import { selectTasks, removeTask, toggleTaskDone } from "../tasksSlice";
 
-const TasksList = ({ tasks, hideDone, toggleTaskDone, removeTask }) => (
-    <StyledTasks>
-        {tasks.map(task => (
+const TasksList = () => {
+    const { tasks, hideDone } = useSelector(selectTasks);
+    const dispatch = useDispatch();
 
-            <Element
-                key={task.id}
-                hidden={task.done && hideDone}
-            >
-                <Button
-                    $toggleDone
-                    onClick={() => toggleTaskDone(task.id)}
+    return (
+        <StyledTasks>
+            {tasks.map(task => (
+
+                <Element
+                    key={task.id}
+                    hidden={task.done && hideDone}
                 >
-                    {task.done ? "✔" : ""}
-                </Button>
-                <Content
-                    $done={task.done}
-                >
-                    {task.id} - {task.content}
-                </Content>
-                <Button
-                    $remove
-                    onClick={() => removeTask(task.id)}
-                >
-                    🗑
-                </Button>
-            </Element>)
-        )}
-    </StyledTasks>
-);
+                    <Button
+                        $toggleDone
+                        onClick={() => dispatch(toggleTaskDone(task.id))}
+                    >
+                        {task.done ? "✔" : ""}
+                    </Button>
+                    <Content
+                        $done={task.done}
+                    >
+                        {task.content}
+                    </Content>
+                    <Button
+                        $remove
+                        onClick={() => dispatch(removeTask(task.id))}
+                    >
+                        🗑
+                    </Button>
+                </Element>)
+            )}
+        </StyledTasks>
+    )
+};
 
 export default TasksList;

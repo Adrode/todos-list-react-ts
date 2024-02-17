@@ -1,20 +1,13 @@
-import { useTasks } from "./useTasks";
+import { useSelector } from "react-redux";
 import Form from "./Form";
 import TasksList from "./TasksList";
 import Buttons from "./Buttons";
 import Section from "../../common/Section";
 import Header from "../../common/Header";
+import { selectTasks } from "./tasksSlice";
 
 function Tasks() {
-  const {
-    tasks,
-    hideDone,
-    removeTask,
-    toggleTaskDone,
-    toggleAllDone,
-    addNewTask,
-    toggleHideDone,
-  } = useTasks();
+  const { tasks } = useSelector(selectTasks);
 
   return (
     <>
@@ -22,27 +15,13 @@ function Tasks() {
 
       <Section
         title="Add new task"
-        body={<Form addNewTask={addNewTask} />}
+        body={<Form />}
       />
 
       <Section
         title="Tasks list"
-        extraHeaderContent={
-          <Buttons
-            tasks={tasks}
-            key={tasks.id}
-            hideDone={hideDone}
-            toggleHideDone={toggleHideDone}
-            toggleAllDone={toggleAllDone}
-          />}
-        body={
-          <TasksList
-            tasks={tasks}
-            key={tasks.id}
-            hideDone={hideDone}
-            removeTask={removeTask}
-            toggleTaskDone={toggleTaskDone}
-          />}
+        extraHeaderContent={<Buttons key={tasks.id} />}
+        body={<TasksList key={tasks.id} />}
       />
     </>
   );
