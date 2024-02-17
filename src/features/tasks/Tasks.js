@@ -7,7 +7,7 @@ import Header from "../../common/Header";
 import { selectTasks } from "./tasksSlice";
 
 function Tasks() {
-  const { tasks } = useSelector(selectTasks);
+  const tasks = useSelector(selectTasks);
 
   return (
     <>
