@@ -11,7 +11,6 @@ Also there are 2 another buttons to hide tasks that are marked as done and to ma
 
 ### Technologies used:
 - HTML
-    - BEM convention
     - Webpage Icon
 - CSS
     - Flex / Grid
