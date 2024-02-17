@@ -1,4 +1,4 @@
-# To-do list - React
+# To-do list
 
 ## *[To-do list app](https://adrode.github.io/todos-list-react/)*
 
@@ -8,7 +8,6 @@
 
 You can add tasks to your to-do list. You can also mark tasks as done and remove any tasks from the list.\
 Also there are 2 another buttons to hide tasks that are marked as done and to mark all the tasks as done.\
-All tasks are saved in Local Storage.
 
 ### Technologies used:
 - HTML
@@ -20,18 +19,13 @@ All tasks are saved in Local Storage.
     - Transition, Transform
     - Pseudo-classes
 - JS/React
-    - Arrow functions
-    - Arrays
-    - Objects
-    - Immutability
     - React framework
-    - JSX syntax
     - useState
     - Controlled components
     - useEffect
-    - Local Storage
     - useRef
     - Styled Components
+    - Redux (w/ store, createSlice)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
