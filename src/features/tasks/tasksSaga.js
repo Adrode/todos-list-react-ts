@@ -1,8 +1,9 @@
-import { call, takeEvery, put } from "redux-saga/effects";
+import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { fetchExampleTasks, setTasks } from "./tasksSlice";
 import { getExampleTasks } from "./getExampleTasks";
 
 function* fetchExampleTasksHandler() {
+    yield delay(1000);
     try {
         const exampleTasks = yield call(getExampleTasks);
         yield put(setTasks(exampleTasks));
@@ -13,5 +14,5 @@ function* fetchExampleTasksHandler() {
 
 export function* watchFetchExampleTasks() {
     console.log("Saga is connected!");
-    yield takeEvery(fetchExampleTasks.type, fetchExampleTasksHandler);
+    yield takeLatest(fetchExampleTasks.type, fetchExampleTasksHandler);
 };
