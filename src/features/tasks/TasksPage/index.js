@@ -2,11 +2,11 @@ import { useSelector } from "react-redux";
 import Form from "./Form";
 import TasksList from "./TasksList";
 import Buttons from "./Buttons";
-import Section from "../../common/Section";
-import Header from "../../common/Header";
-import { selectTasks } from "./tasksSlice";
+import Section from "../../../common/Section";
+import Header from "../../../common/Header";
+import { selectTasks } from "../tasksSlice";
 
-function Tasks() {
+function TasksPage() {
   const tasks = useSelector(selectTasks);
 
   return (
@@ -27,4 +27,4 @@ function Tasks() {
   );
 }
 
-export default Tasks;
+export default TasksPage;

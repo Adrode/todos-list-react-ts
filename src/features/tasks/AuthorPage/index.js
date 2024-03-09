@@ -1,7 +1,7 @@
 import Header from "../../../common/Header";
 import Section from "../../../common/Section";
 
-export const Author = () => (
+const AuthorPage = () => (
     <>
         <Header title="Information about author" />
         <Section
@@ -12,3 +12,5 @@ export const Author = () => (
         />
     </>
 );
+
+export default AuthorPage;

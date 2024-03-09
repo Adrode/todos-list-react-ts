@@ -1,6 +1,7 @@
 import { NavLink, Switch, Route, HashRouter, Redirect } from "react-router-dom/cjs/react-router-dom.min";
-import Tasks from "./features/tasks/Tasks";
-import { Author } from "./features/tasks/Author";
+import TasksPage from "./features/tasks/TasksPage";
+import TaskPage from "./features/tasks/TaskPage";
+import AuthorPage from "./features/tasks/AuthorPage";
 
 const App = () => (
     <HashRouter>
@@ -18,11 +19,14 @@ const App = () => (
                 </li>
             </ul>
             <Switch>
+                <Route path="/tasks/:id">
+                    <TaskPage />
+                </Route>
                 <Route path="/tasks">
-                    <Tasks />
+                    <TasksPage />
                 </Route>
                 <Route path="/author">
-                    <Author />
+                    <AuthorPage />
                 </Route>
                 <Route path="/">
                     <Redirect to="/tasks" />
