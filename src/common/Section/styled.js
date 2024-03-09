@@ -22,3 +22,8 @@ export const Title = styled.h2`
         flex-basis: 100%;
     }
 `;
+
+export const StyledContainer = styled.div`
+    background-color: ${({ theme }) => theme.color.white};
+    padding: 20px;
+`;

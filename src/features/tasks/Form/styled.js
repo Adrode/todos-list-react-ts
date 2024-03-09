@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-    background-color: ${({ theme }) => theme.color.white};
-    padding: 20px;
     gap: 20px;
 
     display: flex;

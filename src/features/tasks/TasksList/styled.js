@@ -1,8 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const StyledTasks = styled.ul`
-    background-color: ${({ theme }) => theme.color.white};
-    padding: 20px;
+    padding-left: 0;
     margin: 0;
     overflow: auto;
 `;
