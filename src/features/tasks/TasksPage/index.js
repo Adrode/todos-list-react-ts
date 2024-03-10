@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
+import { selectTasks } from "../tasksSlice";
 import Form from "./Form";
 import TasksList from "./TasksList";
 import Buttons from "./Buttons";
 import Section from "../../../common/Section";
 import Header from "../../../common/Header";
-import { selectTasks } from "../tasksSlice";
+import Search from "./Search";
 
 function TasksPage() {
   const tasks = useSelector(selectTasks);
@@ -16,6 +17,11 @@ function TasksPage() {
       <Section
         title="Add new task"
         body={<Form />}
+      />
+
+      <Section
+        title="Search engine"
+        body={<Search />}
       />
 
       <Section

@@ -14,13 +14,6 @@ export const StyledForm = styled.form`
     }
 `;
 
-export const Input = styled.input`
-    padding: 8px;
-    border: 1px solid ${({ theme }) => theme.color.silver};
-    flex-grow: 1;
-    overflow: auto;
-`;
-
 export const Button = styled.button`
     padding: 8px;
     border: 1px solid ${({ theme }) => theme.color.teal};

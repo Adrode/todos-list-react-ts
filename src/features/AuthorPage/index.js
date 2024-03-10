@@ -1,5 +1,5 @@
-import Header from "../../../common/Header";
-import Section from "../../../common/Section";
+import Header from "../../common/Header";
+import Section from "../../common/Section";
 
 const AuthorPage = () => (
     <>
