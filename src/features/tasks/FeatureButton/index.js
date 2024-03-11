@@ -1,20 +1,6 @@
 import styled from "styled-components";
 
-export const StyledButtons = styled.div`
-    padding: 20px;
-    margin: 0;
-
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        padding: 0 20px 20px 20px;
-        flex-basis: 100%;
-    }
-`;
-
-export const Button = styled.button`
+export const FeatureButton = styled.button`
     margin-left: 20px;
     padding: 0;
     border: none;
@@ -34,5 +20,19 @@ export const Button = styled.button`
 
     &:disabled {
         color: ${({ theme }) => theme.color.silver};
+    }
+`;
+
+export const StyledButtons = styled.div`
+    padding: 20px;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        padding: 0 20px 20px 20px;
+        flex-basis: 100%;
     }
 `;
