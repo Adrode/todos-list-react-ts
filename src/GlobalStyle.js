@@ -11,10 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Montserrat', sans-serif;
-        max-width: 1000px;
-        margin: 40px auto;
-        padding: 0 20px;
-        background-color: #eee;
+        background-color: ${({ theme }) => theme.color.gallery};
         word-break: break-word;
     }
 `;

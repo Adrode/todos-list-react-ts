@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import styled, { css } from "styled-components";
 
 export const StyledTasks = styled.ul`
@@ -23,6 +24,8 @@ export const Button = styled.button`
     min-height: 30px;
     color: ${({ theme }) => theme.color.white};
     transition: 0.3s;
+
+    cursor: pointer;
 
     ${({ $toggleDone }) => $toggleDone && css`
         background-color: ${({ theme }) => theme.color.green};
@@ -51,4 +54,13 @@ export const Content = styled.span`
     ${({ $done }) => $done && css`
         text-decoration: line-through;
     `}
+`;
+
+export const StyledNavLink = styled(NavLink)`
+    text-decoration: none;
+    color: ${({ theme }) => theme.color.teal};
+
+    &:hover {
+        filter: brightness(110%);
+    }
 `;

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectTasks } from "../tasksSlice";
+import { Container } from "../../../common/Container";
 import Form from "./Form";
 import TasksList from "./TasksList";
 import Buttons from "./Buttons";
@@ -12,7 +13,7 @@ function TasksPage() {
   const tasks = useSelector(selectTasks);
 
   return (
-    <>
+    <Container>
       <Header title="Tasks list" />
 
       <Section
@@ -31,7 +32,7 @@ function TasksPage() {
         extraHeaderContent={<Buttons key={tasks.id} />}
         body={<TasksList key={tasks.id} />}
       />
-    </>
+    </Container>
   );
 }
 

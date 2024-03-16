@@ -7,6 +7,7 @@ export const FeatureButton = styled.button`
     background-color: transparent;
     color: ${({ theme }) => theme.color.teal};
     transition: color 0.3s;
+    cursor: pointer;
 
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {

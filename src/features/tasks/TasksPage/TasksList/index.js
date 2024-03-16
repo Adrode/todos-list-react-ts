@@ -1,6 +1,6 @@
-import { Link, useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { useSelector, useDispatch } from "react-redux";
-import { StyledTasks, Element, Button, Content } from "./styled";
+import { StyledTasks, Element, Button, Content, StyledNavLink } from "./styled";
 import { selectHideDone, removeTask, toggleTaskDone, selectTasksByQuery } from "../../tasksSlice";
 import searchQueryParamName from "../searchQueryParamName";
 
@@ -29,7 +29,7 @@ const TasksList = () => {
                     <Content
                         $done={task.done}
                     >
-                        <Link to={`/tasks/${task.id}`}>{task.content}</Link>
+                        <StyledNavLink to={`/tasks/${task.id}`}>{task.content}</StyledNavLink>
                     </Content>
                     <Button
                         $remove

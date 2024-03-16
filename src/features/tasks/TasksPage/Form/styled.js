@@ -26,6 +26,8 @@ export const Button = styled.button`
     justify-content: center;
     transition: 0.3s;
 
+    cursor: pointer;
+
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         flex-basis: 100%;
     }

@@ -1,24 +1,24 @@
 import { Switch, Route, HashRouter, Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import { StyledNav, StyledList, StyledListElement, StyledNavLink } from "./styled";
 import TasksPage from "./features/tasks/TasksPage";
 import TaskPage from "./features/tasks/TaskPage";
 import AuthorPage from "./features/AuthorPage";
-import { StyledNavLink } from "./styled";
 
 const App = () => (
     <HashRouter>
-        <nav>
-            <ul>
-                <li>
+        <StyledNav>
+            <StyledList>
+                <StyledListElement>
                     <StyledNavLink to="/tasks">
                         Tasks
                     </StyledNavLink>
-                </li>
-                <li>
+                </StyledListElement>
+                <StyledListElement>
                     <StyledNavLink to="/author">
                         About author
                     </StyledNavLink>
-                </li>
-            </ul>
+                </StyledListElement>
+            </StyledList>
             <Switch>
                 <Route path="/tasks/:id">
                     <TaskPage />
@@ -33,7 +33,7 @@ const App = () => (
                     <Redirect to="/tasks" />
                 </Route>
             </Switch>
-        </nav>
+        </StyledNav>
     </HashRouter>
 );
 
