@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { StyledTasks, Element, Button, Content, StyledNavLink } from "./styled";
 import { selectHideDone, removeTask, toggleTaskDone, selectTasksByQuery } from "../../tasksSlice";
 import searchQueryParamName from "../searchQueryParamName";
+import { toTask } from "../../../../routes";
 
 const TasksList = () => {
     const location = useLocation();
@@ -29,7 +30,9 @@ const TasksList = () => {
                     <Content
                         $done={task.done}
                     >
-                        <StyledNavLink to={`/tasks/${task.id}`}>{task.content}</StyledNavLink>
+                        <StyledNavLink to={toTask({ id: task.id })}>
+                            {task.content}
+                        </StyledNavLink>
                     </Content>
                     <Button
                         $remove

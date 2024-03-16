@@ -1,11 +1,6 @@
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 
-// import { StyledNav, StyledList, StyledListElement, StyledNavLink } from "./styled";
-
-export const StyledNav = styled.nav`
-`;
-
 export const StyledList = styled.ul`
     margin: 0;
     min-height: 60px;

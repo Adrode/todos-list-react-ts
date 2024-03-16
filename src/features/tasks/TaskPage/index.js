@@ -16,7 +16,7 @@ const TaskPage = () => {
                 title={task ? task.content : "Task not found"}
                 body={task ?
                     <><strong>Completed: </strong>{task.done ? "Yes" : "No"}</>
-                    : ""
+                    : undefined
                 }
             />
         </Container>
