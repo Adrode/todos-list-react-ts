@@ -1,15 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchExampleTasks, selectLoadingStatus } from "../tasksSlice";
+import { fetchExampleTasks, selectLoadingStatus } from "../../tasksSlice";
 import { FeatureButton, StyledButtons } from "../FeatureButton";
 
-const Loading = () => {
+const LoadingButton = () => {
     const dispatch = useDispatch();
     const loadingStatus = useSelector(selectLoadingStatus);
 
     return (
         <StyledButtons>
             <FeatureButton
-                disabled={loadingStatus ? true : false}
+                disabled={loadingStatus}
                 onClick={() => dispatch(fetchExampleTasks())}
             >
                 {loadingStatus ? "Loading..." : "Download example tasks"}
@@ -18,4 +18,4 @@ const Loading = () => {
     )
 };
 
-export default Loading;
+export default LoadingButton;

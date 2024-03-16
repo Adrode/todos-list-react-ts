@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { FeatureButton, StyledButtons } from "../../FeatureButton";
+import { FeatureButton, StyledButtons } from "../FeatureButton";
 import {
     selectHideDone,
     selectIsEveryTaskDone,

@@ -6,12 +6,13 @@
 
 ### Basic activity:
 
-You can add tasks to your to-do list. You can also mark tasks as done and remove any tasks from the list.\
-Also there are 2 another buttons to hide tasks that are marked as done and to mark all the tasks as done.\
+Enter the content of the task you want to add to the list.\
+After pressing the "Add task" button, the task will appear in the task list, where you can mark it as completed or delete it.\
+You can go into details about a specific task by clicking on its content.\
+Use the search engine to search for a specific task.
 
 ### Technologies used:
 - HTML
-    - Webpage Icon
 - CSS
     - Flex / Grid
     - Media Queries
@@ -19,12 +20,9 @@ Also there are 2 another buttons to hide tasks that are marked as done and to ma
     - Pseudo-classes
 - JS/React
     - React framework
-    - useState
-    - Controlled components
-    - useEffect
     - useRef
     - Styled Components
-    - Redux (w/ store, createSlice)
+    - Redux (w/ Saga, Router, Toolkit)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

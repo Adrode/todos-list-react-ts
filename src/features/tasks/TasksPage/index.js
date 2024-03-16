@@ -7,7 +7,7 @@ import Buttons from "./Buttons";
 import Section from "../../../common/Section";
 import Header from "../../../common/Header";
 import Search from "./Search";
-import Loading from "../Loading";
+import LoadingButton from "./LoadingButton";
 
 function TasksPage() {
   const tasks = useSelector(selectTasks);
@@ -18,7 +18,7 @@ function TasksPage() {
 
       <Section
         title="Add new task"
-        extraHeaderContent={<Loading />}
+        extraHeaderContent={<LoadingButton />}
         body={<Form />}
       />
 
