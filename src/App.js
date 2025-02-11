@@ -12,6 +12,12 @@ const App = () => (
             <Route path={toTask()}>
                 <TaskPage />
             </Route>
+            <Route path={toTask()}>
+                <TaskPage />
+            </Route>
+            <Route path={toTask()}>
+                <TaskPage />
+            </Route>
             <Route path={toTasks()}>
                 <TasksPage />
             </Route>
