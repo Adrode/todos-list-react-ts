@@ -1,6 +1,10 @@
+import { Task } from "./types";
+
+type TaskProps = { tasks: Task[] };
+
 const key = "tasks";
 
-export const saveTasksInLocalStorage = tasks => (
+export const saveTasksInLocalStorage = (tasks: TaskProps) => (
     localStorage.setItem(key, JSON.stringify(tasks))
 );
 
