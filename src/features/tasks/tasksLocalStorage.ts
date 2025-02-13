@@ -8,6 +8,7 @@ export const saveTasksInLocalStorage = (tasks: TaskProps) => (
     localStorage.setItem(key, JSON.stringify(tasks))
 );
 
-export const getTasksFromLocalStorage = () => (
-    JSON.parse(localStorage.getItem(key)) || []
-);
+export const getTasksFromLocalStorage = (): TaskProps => {
+    const data = localStorage.getItem(key);
+    return data ? (JSON.parse(data) as TaskProps) : { tasks: [] };
+};
