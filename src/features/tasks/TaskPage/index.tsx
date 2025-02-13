@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
 import Header from "../../../common/Header";
 import Section from "../../../common/Section";
 import { selectTaskById } from "../tasksSlice";
