@@ -1,6 +1,6 @@
 import { Task } from "./types";
 
-type TaskProps = { tasks: Task[] };
+interface TaskProps { tasks: Task[] };
 
 const key = "tasks";
 

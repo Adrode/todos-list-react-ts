@@ -4,12 +4,10 @@ import { fetchExampleTasks, selectTasks, fetchExampleTasksSuccess, fetchExampleT
 import { getExampleTasks } from "./getExampleTasks";
 import { saveTasksInLocalStorage } from "./tasksLocalStorage";
 
-type TaskProps = { tasks: Task[] };
-
 function* fetchExampleTasksHandler() {
     try {
         yield delay(1000);
-        const exampleTasks: TaskProps = yield call(getExampleTasks);
+        const exampleTasks: Task[] = yield call(getExampleTasks);
         yield put(fetchExampleTasksSuccess(exampleTasks));
     } catch (error) {
         yield put(fetchExampleTasksError());
@@ -18,8 +16,8 @@ function* fetchExampleTasksHandler() {
 };
 
 function* saveTasksInLocalStorageHandler() {
-    const tasks: TaskProps = yield select(selectTasks);
-    yield call(saveTasksInLocalStorage, tasks);
+    const tasks: Task[] = yield select(selectTasks);
+    yield call(saveTasksInLocalStorage, { tasks });
 }
 
 export function* tasksSaga() {
