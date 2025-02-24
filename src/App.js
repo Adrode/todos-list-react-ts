@@ -1,4 +1,4 @@
-import { Switch, Route, HashRouter, Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import { Routes, Route, HashRouter, Navigate } from "react-router-dom";
 import TasksPage from "./features/tasks/TasksPage";
 import TaskPage from "./features/tasks/TaskPage";
 import AuthorPage from "./features/AuthorPage";
@@ -8,7 +8,7 @@ import { toTasks, toTask, toAuthor } from "./routes";
 const App = () => (
     <HashRouter>
         <Navigation />
-        <Switch>
+        <Routes> 
             <Route path={toTask()}>
                 <TaskPage />
             </Route>
@@ -25,9 +25,9 @@ const App = () => (
                 <AuthorPage />
             </Route>
             <Route path="/">
-                <Redirect to={toTasks()} />
+                <Navigate to={toTasks()} />
             </Route>
-        </Switch>
+        </Routes>
     </HashRouter>
 );
 
