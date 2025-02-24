@@ -1,5 +1,14 @@
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
+
+interface ButtonProps {
+    $toggleDone?: boolean;
+    $remove?: boolean;
+};
+
+interface ContentProps {
+    $done?: boolean;
+}
 
 export const StyledTasks = styled.ul`
     padding-left: 0;
@@ -19,7 +28,7 @@ export const Element = styled.li`
     `}
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
     min-width: 30px;
     min-height: 30px;
     color: ${({ theme }) => theme.color.white};
@@ -46,12 +55,12 @@ export const Button = styled.button`
     `}
 `;
 
-export const Content = styled.span`
+export const Content = styled.span<ContentProps>`
     display: flex;
     align-items: center;
     padding: 0 10px;
 
-    ${({ $done }) => $done && css`
+    ${({ $done }) => $done && css` 
         text-decoration: line-through;
     `}
 `;

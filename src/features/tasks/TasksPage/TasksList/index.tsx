@@ -4,12 +4,13 @@ import { selectHideDone, removeTask, toggleTaskDone, selectTasksByQuery } from "
 import searchQueryParamName from "../searchQueryParamName";
 import { useQueryParameter } from "../queryParameters";
 import { toTask } from "../../../../routes";
+import { RootState } from "../../../../store";
 
 const TasksList = () => {
-    const query = useQueryParameter(searchQueryParamName);
+    const query = useQueryParameter(searchQueryParamName()) ?? "";
 
-    const tasks = useSelector(state => selectTasksByQuery(state, query));
-    const hideDone = useSelector(selectHideDone);
+    const tasks = useSelector((state: RootState) => selectTasksByQuery(state, query));
+    const hideDone = useSelector((state: RootState) => selectHideDone(state));
     const dispatch = useDispatch();
 
     return (
@@ -29,7 +30,7 @@ const TasksList = () => {
                     <Content
                         $done={task.done}
                     >
-                        <StyledNavLink to={toTask({ id: task.id })}>
+                        <StyledNavLink to={toTask({ id: String(task.id) })}>
                             {task.content}
                         </StyledNavLink>
                     </Content>
