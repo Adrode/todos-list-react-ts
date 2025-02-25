@@ -10,7 +10,7 @@ interface InitialStateProps {
 };
 
 const initialState: InitialStateProps = {
-    tasks: getTasksFromLocalStorage().tasks,
+    tasks: getTasksFromLocalStorage().tasks ?? [],
     hideDone: false,
     loading: false,
 }
@@ -26,8 +26,8 @@ const tasksSlice = createSlice({
             let index = tasks.findIndex(task => task.id === id);
             tasks.splice(index, 1);
         },
-        toggleHideDone: ({ hideDone }) => {
-            hideDone = !hideDone;
+        toggleHideDone: (state) => {
+            state.hideDone = !state.hideDone;
         },
         toggleTaskDone: ({ tasks }, { payload: id }: PayloadAction<number>) => {
             const index = tasks.findIndex(task => task.id === id);
@@ -68,7 +68,7 @@ export const selectTasks = (state: RootState) => selectTasksState(state).tasks;
 export const selectHideDone = (state: RootState) => selectTasksState(state).hideDone;
 
 export const selectIsEveryTaskDone = (state: RootState) =>
-    selectTasks(state).every(({ done }) => done);
+    (selectTasks(state) || []).every(({ done }) => done);
 
 export const selectIsTasksListEmpty = (state: RootState) =>
     selectTasks(state).length === 0;
