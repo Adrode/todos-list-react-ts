@@ -10,7 +10,7 @@ interface InitialStateProps {
 };
 
 const initialState: InitialStateProps = {
-    tasks: getTasksFromLocalStorage().tasks ?? [],
+    tasks: getTasksFromLocalStorage()?.tasks ?? [],
     hideDone: false,
     loading: false,
 }
@@ -22,16 +22,16 @@ const tasksSlice = createSlice({
         addTask: ({ tasks }, { payload: task }: PayloadAction<Task>) => {
             tasks.push(task);
         },
-        removeTask: ({ tasks }, { payload: id }: PayloadAction<number>) => {
+        removeTask: ({ tasks }, { payload: id }: PayloadAction<string>) => {
             let index = tasks.findIndex(task => task.id === id);
             tasks.splice(index, 1);
         },
         toggleHideDone: (state) => {
             state.hideDone = !state.hideDone;
         },
-        toggleTaskDone: ({ tasks }, { payload: id }: PayloadAction<number>) => {
-            const index = tasks.findIndex(task => task.id === id);
-            tasks[index].done = !tasks[index].done;
+        toggleTaskDone: (state, { payload: id }: PayloadAction<string>) => {
+            const index = state.tasks.findIndex(task => task.id === id);
+            state.tasks[index].done = !state.tasks[index].done;
         },
         toggleAllDone: ({ tasks }) => {
             for (const task of tasks) {
@@ -74,7 +74,7 @@ export const selectIsTasksListEmpty = (state: RootState) =>
     selectTasks(state).length === 0;
 
 export const selectTaskById = (state: RootState, taskId: number) =>
-    selectTasks(state).find(({ id }) => id === taskId);
+    selectTasks(state).find(({ id }) => id === String(taskId));
 
 export const selectTasksByQuery = (state: RootState, query: string) => {
     const tasks = selectTasks(state);
