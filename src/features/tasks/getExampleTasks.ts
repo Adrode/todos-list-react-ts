@@ -1,3 +1,5 @@
+import { Task } from "./types";
+
 export const getExampleTasks = async () => {
     const response = await fetch("/todos-list-react-ts/exampleTasks.json");
 
@@ -5,5 +7,5 @@ export const getExampleTasks = async () => {
         new Error(response.statusText);
     }
 
-    return await response.json() as string[];
+    return await response.json() as Task[];
 };
