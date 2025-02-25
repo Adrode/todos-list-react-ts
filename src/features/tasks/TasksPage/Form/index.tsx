@@ -19,7 +19,7 @@ const Form = () => {
         }
 
         dispatch(addTask({
-            id: nanoid(),
+            id: Number(nanoid()),
             content: trimmedTaskContent,
             done: false,
         }));
