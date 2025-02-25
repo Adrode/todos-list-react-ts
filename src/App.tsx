@@ -8,27 +8,13 @@ import { toTasks, toTask, toAuthor } from "./routes";
 const App = () => (
     <HashRouter>
         <Navigation />
-        <Routes> 
-            <Route path={toTask()}>
-                <TaskPage />
-            </Route>
-            <Route path={toTask()}>
-                <TaskPage />
-            </Route>
-            <Route path={toTask()}>
-                <TaskPage />
-            </Route>
-            <Route path={toTasks()}>
-                <TasksPage />
-            </Route>
-            <Route path={toAuthor()}>
-                <AuthorPage />
-            </Route>
-            <Route path="/">
-                <Navigate to={toTasks()} />
-            </Route>
+        <Routes>
+            <Route path={toTask()} element={<TaskPage />} />
+            <Route path={toTasks()} element={<TasksPage />} />
+            <Route path={toAuthor()} element={<AuthorPage />} />
+            <Route path="/" element={<Navigate to={toTasks()} />} />
         </Routes>
-    </HashRouter>
+    </HashRouter >
 );
 
 export default App;

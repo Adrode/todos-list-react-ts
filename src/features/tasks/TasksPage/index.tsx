@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import { selectTasks } from "../tasksSlice";
 import { Container } from "../../../common/Container";
 import Form from "./Form";
 import TasksList from "./TasksList";

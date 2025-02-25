@@ -4,10 +4,11 @@ import Header from "../../../common/Header";
 import Section from "../../../common/Section";
 import { selectTaskById } from "../tasksSlice";
 import { Container } from "../../../common/Container";
+import { RootState } from "../../../store";
 
 const TaskPage = () => {
     const { id } = useParams();
-    const task = useSelector(state => selectTaskById(state, id));
+    const task = useSelector((state: RootState) => selectTaskById(state, Number(id)));
 
     return (
         <Container>
