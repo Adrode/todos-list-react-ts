@@ -23,6 +23,7 @@ Use the search engine to search for a specific task.
     - useRef
     - Styled Components
     - Redux (w/ Saga, Router, Toolkit)
+- TypeScript
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
