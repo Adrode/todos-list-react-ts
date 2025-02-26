@@ -1,6 +1,6 @@
 # To-do list in TypeScript
 
-## *[To-do list app](https://adrode.github.io/todos-list-react/)*
+## *[To-do list app](https://adrode.github.io/todos-list-react-ts/)*
 
 ![pageScreenshot](images/taskListPageScreenshotUpdate1.png)
 
