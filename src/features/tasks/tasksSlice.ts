@@ -10,7 +10,7 @@ interface InitialStateProps {
 };
 
 const initialState: InitialStateProps = {
-    tasks: getTasksFromLocalStorage()?.tasks ?? [],
+    tasks: getTasksFromLocalStorage().tasks ?? [],
     hideDone: false,
     loading: false,
 }
@@ -19,34 +19,34 @@ const tasksSlice = createSlice({
     name: 'tasks',
     initialState,
     reducers: {
-        addTask: ({ tasks }, { payload: task }: PayloadAction<Task>) => {
-            tasks.push(task);
+        addTask: (state, action: PayloadAction<Task>) => {
+            state.tasks.push(action.payload);
         },
-        removeTask: ({ tasks }, { payload: id }: PayloadAction<string>) => {
-            let index = tasks.findIndex(task => task.id === id);
-            tasks.splice(index, 1);
+        removeTask: (state, action: PayloadAction<string>) => {
+            let index = state.tasks.findIndex(task => task.id === action.payload);
+            state.tasks.splice(index, 1);
         },
         toggleHideDone: (state) => {
             state.hideDone = !state.hideDone;
         },
-        toggleTaskDone: (state, { payload: id }: PayloadAction<string>) => {
-            const index = state.tasks.findIndex(task => task.id === id);
+        toggleTaskDone: (state, action: PayloadAction<string>) => {
+            const index = state.tasks.findIndex(task => task.id === action.payload);
             state.tasks[index].done = !state.tasks[index].done;
         },
-        toggleAllDone: ({ tasks }) => {
-            for (const task of tasks) {
+        toggleAllDone: (state) => {
+            for (const task of state.tasks) {
                 task.done = true;
             };
         },
-        fetchExampleTasks: ({ loading }) => {
-            loading = true;
+        fetchExampleTasks: (state) => {
+            state.loading = true;
         },
-        fetchExampleTasksSuccess: ({ tasks, loading }, { payload: tasksFetched }: PayloadAction<Task[]>) => {
-            tasks = tasksFetched;
-            loading = false;
+        fetchExampleTasksSuccess: (state, action: PayloadAction<Task[]>) => {
+            state.tasks = action.payload;
+            state.loading = false;
         },
-        fetchExampleTasksError: ({ loading }) => {
-            loading = false;
+        fetchExampleTasksError: (state) => {
+            state.loading = false;
         },
     },
 });
