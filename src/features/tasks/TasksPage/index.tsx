@@ -18,7 +18,7 @@ const TasksPage = () => (
     />
 
     <Section
-      title="Search engine"
+      title="Search"
       body={<Search />}
     />
 
