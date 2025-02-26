@@ -73,7 +73,7 @@ export const selectIsEveryTaskDone = (state: RootState) =>
 export const selectIsTasksListEmpty = (state: RootState) =>
     selectTasks(state).length === 0;
 
-export const selectTaskById = (state: RootState, taskId: number) =>
+export const selectTaskById = (state: RootState, taskId: string) =>
     selectTasks(state).find(({ id }) => id === String(taskId));
 
 export const selectTasksByQuery = (state: RootState, query: string) => {

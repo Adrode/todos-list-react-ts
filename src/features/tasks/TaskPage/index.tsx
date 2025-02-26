@@ -8,7 +8,11 @@ import { RootState } from "../../../store";
 
 const TaskPage = () => {
     const { id } = useParams();
-    const task = useSelector((state: RootState) => selectTaskById(state, Number(id)));
+    const taskId = id ? String(id) : null;
+
+    const task = useSelector((state: RootState) => (
+        taskId ? selectTaskById(state, taskId) : undefined
+    ));
 
     return (
         <Container>
@@ -17,7 +21,7 @@ const TaskPage = () => {
                 title={task ? task.content : "Task not found"}
                 body={task ?
                     <><strong>Completed: </strong>{task.done ? "Yes" : "No"}</>
-                    : undefined
+                    : "Task content not found"
                 }
             />
         </Container>
