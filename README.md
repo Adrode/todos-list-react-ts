@@ -1,4 +1,4 @@
-# To-do list
+# To-do list in TypeScript
 
 ## *[To-do list app](https://adrode.github.io/todos-list-react/)*
 
